@@ -13,7 +13,7 @@ A modern, neumorphic calculator with dark/light mode toggle built with HTML, CSS
 
 ## Live Demo
 
-Visit the [GitHub Pages site]([https://akshayawrites.github.io/Calculator]) to see it in action!
+Visit the [GitHub Pages site][https://akshayawrites.github.io/Calculator] to see it in action!
 
 ## Technologies Used
 
