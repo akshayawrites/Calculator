@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0903248f;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+body.light-mode {
+    background: #efe9cfcc;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: 100%;
+    background: #2D3748;
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3),
+                0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.mode-toggle-container {
+    margin-bottom: 20px;
+}
+
+.mode-toggle {
+    display: flex;
+    width: 80px;
+    height: 35px;
+    background: #3A4556;
+    border-radius: 20px;
+    padding: 3px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mode-toggle.active {
+    background: #4A5568;
+}
+
+.mode-icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.mode-toggle.active .mode-icon.moon {
+    opacity: 1;
+}
+
+.mode-toggle:not(.active) .mode-icon.moon {
+    opacity: 0.4;
+}
+
+.mode-toggle.active .mode-icon.sun {
+    opacity: 0.4;
+}
+
+.mode-toggle:not(.active) .mode-icon.sun {
+    opacity: 1;
+}
+
+.mode-toggle::before {
+    content: '';
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    background: #2D3748;
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4),
+                -1px -1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.mode-toggle.active::before {
+    transform: translateX(45px);
+}
+
+.display {
+    background: #1A202C;
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.05);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.display-expression {
+    width: 100%;
+    text-align: right;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    min-height: 1.2em;
+    font-weight: 400;
+}
+
+.display-content {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    padding: 22px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: #FFFFFF;
+    background: #D4D4D4;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3),
+                -2px -2px 4px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.btn:active {
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+    transform: scale(0.98);
+}
+
+.btn-number {
+    background: #D4D4D4;
+    color: #2D3748;
+}
+
+.btn-operator {
+    background: #FF9500;
+    color: #FFFFFF;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3),
+                -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.btn-operator:active {
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.btn-clear,
+.btn-delete,
+.btn-action {
+    background: #D4D4D4;
+    color: #2D3748;
+}
+
+.btn-equals {
+    background: #FF9500;
+    color: #FFFFFF;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3),
+                -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.btn-equals:active {
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 20px;
+    }
+    
+    .display {
+        padding: 20px 15px;
+        min-height: 80px;
+    }
+    
+    .display-content {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 18px;
+        font-size: 1.2rem;
+    }
+    
+    .buttons {
+        gap: 10px;
+    }
+}

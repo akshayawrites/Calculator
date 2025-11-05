@@ -1,0 +1,38 @@
+Create a simple, classy calculator web app using HTML, CSS, and JavaScript.
+
+Design requirements:
+
+Theme colors:
+
+Primary: #866BBF, #8878BF, #7E72A6, #BFB8D9, #F2F2F2
+
+Use a modern calculator-style font (like "Orbitron", "Digital-7", or similar digital display font).
+
+The calculator should have a minimal, elegant, glassy UI with soft shadows and rounded corners.
+
+Display area should be large and clean with right-aligned text.
+
+Buttons should have hover effects and smooth animations (no harsh borders).
+
+Keep it responsive and centered on the page.
+
+Functional requirements:
+
+Basic arithmetic operations: +, -, *, /, %, and =
+
+Clear (C) and Delete (⌫) buttons.
+
+Should handle decimal numbers.
+
+Display updates dynamically as you type.
+
+Extras (optional but nice):
+
+Light glow on hover for buttons.
+
+Subtle gradient background using theme colors.
+
+Animate button click (e.g. scale down slightly).
+
+Make sure the result looks modern, clean, and professional, with a balanced color palette and readable UI.
+Include all code (HTML, CSS, JS) in separate files.
